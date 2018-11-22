@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Router } from '@reach/router';
+import { useAction } from 'easy-peasy';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+// * Pages
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Home from './pages/Home';
+
+function App() {
+  const startAuthListener = useAction(
+    dispatch => dispatch.auth.startAuthListener,
+  );
+
+  useEffect(() => {
+    startAuthListener();
+  }, []);
+
+  return (
+    <Router>
+      <Home path="/" />
+      <Login path="/login" />
+      <Signup path="/signup" />
+    </Router>
+  );
 }
 
 export default App;

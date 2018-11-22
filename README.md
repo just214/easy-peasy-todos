@@ -1,4 +1,22 @@
+## easy-peasy-auth-demo
+
+[Hooks](https://reactjs.org/docs/hooks-intro.html) are a new feature proposal from the React team that lets you use state and other React features in function components. (no classes necessary)
+
+[easy-peasy](https://github.com/ctrlplusb/easy-peasy) is an awesome global state management library built on top of React Hooks and Redux. It provides an incredibly intuitive API with very little boilerplate. It comes with several baked-in goodies, including:
+
+- Support for optimized derived state (think reselect) and async actions.
+- Redux Dev Tools integration (out of the box)
+- Redux middleware and root reducer enhancements support
+
+easy-peasy gives you the power of Redux and Reselect in a single library. In my experience, it's one of the best state management solution out there. Incredible work by [Sean Matheson (ctrlplusb)](https://github.com/ctrlplusb)! If you agree, you should go give [easy-peasy](https://github.com/ctrlplusb/easy-peasy) a star.
+
+This demo uses React Hooks and easy-peasy to create a basic login/signup form using [Firebase Authentication](https://firebase.google.com/docs/auth/web/start?authuser=0).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Requirements
+
+This demo uses the unstable `16.7.0-alpha` version of `react` and `react-dom`.
 
 ## Available Scripts
 
@@ -7,22 +25,27 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br>
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
+
 You will also see any lint errors in the console.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br>
+
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
+
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
+
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
