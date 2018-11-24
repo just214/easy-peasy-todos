@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, navigate } from '@reach/router';
+import { Link } from '@reach/router';
 import { useAction, useStore } from 'easy-peasy';
 import AuthLayout from '../layouts/AuthLayout';
 import { Input, Button } from '../components/common';
@@ -7,21 +7,22 @@ import { Input, Button } from '../components/common';
 function Login() {
   const [error, setError] = useState(null);
   const [pending, setPending] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const { email, password } = useStore(state => state.auth.form);
+  const { email } = useStore(state => state.auth.form);
   const { isValid } = useStore(state => state.auth);
   const authActions = useAction(dispatch => dispatch.auth);
 
   useEffect(() => {
-    authActions.setFormType('login');
+    authActions.setFormType('reset-password');
   }, []);
 
-  async function handleLogin(e) {
+  async function handleResetPassword(e) {
     e.preventDefault();
     setPending(true);
     try {
-      await authActions.loginWithEmail();
-      navigate('/');
+      await authActions.sendPasswordResetEmail();
+      setShowSuccessMessage(true);
     } catch (error) {
       setError(error);
     } finally {
@@ -31,32 +32,31 @@ function Login() {
 
   return (
     <AuthLayout>
-      <h3>Login</h3>
-      <form onSubmit={handleLogin} className="auth-form">
+      <h3>Reset Password</h3>
+      <form onSubmit={handleResetPassword} className="auth-form">
         <Input
           type="text"
           value={email}
           onChange={e => authActions.setEmail(e.target.value)}
           placeholder="email"
         />
-        <Input
-          type="password"
-          value={password}
-          onChange={e => authActions.setPassword(e.target.value)}
-          placeholder="password"
-        />
 
         <Button
           type="submit"
-          onClick={handleLogin}
+          onClick={handleResetPassword}
           disabled={!isValid || pending}
           loading={pending}
         >
-          Login
+          Send reset link
         </Button>
       </form>
-      <Link to="/signup">Signup</Link>
-      <Link to="/reset-password">Reset Password</Link>
+      <Link to="/login">Back to Login</Link>
+
+      {showSuccessMessage && (
+        <div>
+          An email was sent to {email} with a link to reset your password.
+        </div>
+      )}
       {error && (
         <div style={{ color: 'tomato', margin: '10px' }}>{error.message}</div>
       )}

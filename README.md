@@ -1,18 +1,43 @@
-## easy-peasy-auth-demo
+## easy-peasy-todos
+
+A todo app built with [React Hooks](https://reactjs.org/docs/hooks-intro.html), [easy-peasy](https://github.com/ctrlplusb/easy-peasy), and [Firebase](https://firebase.google.com/).
+
+Includes:
+
+- Email/Password authentication with Firebase [Authentication](https://firebase.google.com/docs/auth/web/start?authuser=0) (login, signup, and password reset).
+- Real-time data with Firebase [Cloud Firestore](https://firebase.google.com/docs/firestore/).
+- Global state management with [easy-peasy](https://github.com/ctrlplusb/easy-peasy).
+
+### About this App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+I left my Firebase config in this project. Feel free to use it or replace it with your own in `src/firebase.config.js`.
+
+#### [Hooks](https://reactjs.org/docs/hooks-intro.html)
 
 [Hooks](https://reactjs.org/docs/hooks-intro.html) are a new feature proposal from the React team that lets you use state and other React features in function components. (no classes necessary)
 
-[easy-peasy](https://github.com/ctrlplusb/easy-peasy) is an awesome global state management library built on top of React Hooks and Redux. It provides an incredibly intuitive API with very little boilerplate. It comes with several baked-in goodies, including:
+This app uses only function components and relies on Hooks for all component state.
 
-- Support for optimized derived state (think reselect) and async actions.
+#### [easy-peasy](https://github.com/ctrlplusb/easy-peasy)
+
+[easy-peasy](https://github.com/ctrlplusb/easy-peasy) is an awesome global state management library built on top of React Hooks and Redux. It provides an intuitive API with very little boilerplate. It comes with several baked-in goodies, including:
+
+- Support for optimized, derived state (think Reselect) and async actions.
 - Redux Dev Tools integration (out of the box)
 - Redux middleware and root reducer enhancements support
+- An awesome API!
 
 easy-peasy gives you the power of Redux and Reselect in a single library. In my experience, it's one of the best state management solution out there. Incredible work by [Sean Matheson (ctrlplusb)](https://github.com/ctrlplusb)! If you agree, you should go give [easy-peasy](https://github.com/ctrlplusb/easy-peasy) a star.
 
-This demo uses React Hooks and easy-peasy to create a basic login/signup form using [Firebase Authentication](https://firebase.google.com/docs/auth/web/start?authuser=0).
+This app uses easy-peasy to manage the users and todos, including subscriptions.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### [Firebase](https://firebase.google.com/)
+
+[Firebase](https://firebase.google.com/) is a mobile and web app development platform that provides a variety of powerful tools and services to help develop high-quality apps.
+
+This app uses Firebase [Authentication](https://firebase.google.com/docs/auth/web/start?authuser=0) to authenticate users and [Cloud Firestore](https://firebase.google.com/docs/firestore/) to store the todos.
 
 ## Requirements
 
@@ -59,9 +84,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

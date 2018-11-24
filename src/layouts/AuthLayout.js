@@ -1,13 +1,12 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import logo from '../logo.svg';
+import logo from '../icons/logo.svg';
 
 function AuthLayout(props) {
   return (
-    <div className="App">
+    <div className="App" style={{ textAlign: 'center' }}>
       <img src={logo} className="App-logo" alt="logo" />
+      <h1>easy-peasy-todos</h1>
       {props.children}
-      <Footer />
     </div>
   );
 }

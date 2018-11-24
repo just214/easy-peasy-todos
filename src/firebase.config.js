@@ -2,6 +2,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+// * You can replace this config with your own.
 const config = {
   apiKey: 'AIzaSyB2j3_JfYw7rPQ2ce6fRzoFMfa0nfRUH0U',
   authDomain: 'easy-peasy-app.firebaseapp.com',
@@ -14,7 +15,7 @@ firebase.initializeApp(config);
 
 const db = firebase.firestore();
 
-const settings = { /* your settings... */ timestampsInSnapshots: true };
+const settings = { timestampsInSnapshots: true };
 db.settings(settings);
 
 const { auth } = firebase;

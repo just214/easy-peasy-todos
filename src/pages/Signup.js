@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, navigate } from '@reach/router';
 import { useAction, useStore } from 'easy-peasy';
 import AuthLayout from '../layouts/AuthLayout';
+import { Input, Button } from '../components/common';
 
 function Signup() {
   const [error, setError] = useState(null);
@@ -47,38 +48,41 @@ function Signup() {
   return (
     <AuthLayout>
       <h3>Signup</h3>
-      <form onSubmit={handleSignup}>
-        <input
+      <form onSubmit={handleSignup} className="auth-form">
+        <Input
           type="text"
           value={email}
           onChange={e => setEmail(e.target.value)}
           placeholder="email"
         />
-        <input
+        <Input
           type="password"
           value={password}
           onChange={e => setPassword(e.target.value)}
           placeholder="password"
         />
 
-        <input
+        <Input
           type="password"
           value={confirmPassword}
           onChange={e => setConfirmPassword(e.target.value)}
           placeholder="confirm password"
         />
 
-        {error && (
-          <div style={{ color: 'tomato', margin: '10px' }}>{error.message}</div>
-        )}
-
         {pending && <div style={{ margin: '10px' }}>{pending}</div>}
 
-        <button onClick={handleSignup} disabled={!isValid}>
+        <Button
+          onClick={handleSignup}
+          disabled={!isValid || pending}
+          loading={pending}
+        >
           Signup
-        </button>
+        </Button>
       </form>
       <Link to="/login">Login</Link>
+      {error && (
+        <div style={{ color: 'tomato', margin: '10px' }}>{error.message}</div>
+      )}
     </AuthLayout>
   );
 }

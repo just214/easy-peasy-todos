@@ -6,19 +6,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #333;
+  background-color: #282c34;
   color: white;
 }
 
 .App {
-  text-align: center;
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding-top: 80px;
+  padding: 40px;
   font-size: calc(10px + 1.2vmin);
-  color: white;
 }
 
 .App-logo {
@@ -29,10 +27,6 @@ body {
 .Github-logo {
   height: 3vmin;
   margin-left: 10px;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -48,49 +42,9 @@ a {
   color: lightblue;
 }
 
-input,
-button {
-  margin: 3px;
-  height: 30px;
-  border-radius: 5px;
-  font-size: 14px;
-  border: none;
-  padding: 5px;
-}
-
-input {
-  width: 250px;
-}
-
-button {
-  background-color: lightblue;
-  cursor: pointer;
-  width: 100px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-button:disabled {
-  background-color: lightgray;
-  cursor: not-allowed;
-}
-
-form {
+.auth-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.footer {
-  height: 50px;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-
-  background-color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

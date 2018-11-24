@@ -1,9 +1,22 @@
 import React from 'react';
-import githubLogo from '../github.svg';
+import styled from 'styled-components';
+import githubLogo from '../icons/github.svg';
+
+const StyledFooter = styled.div`
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 function Footer() {
   return (
-    <div className="footer">
+    <StyledFooter>
       <small>
         This demo is powered by{' '}
         <a
@@ -32,7 +45,7 @@ function Footer() {
           alt="github-logo"
         />
       </a>
-    </div>
+    </StyledFooter>
   );
 }
 
