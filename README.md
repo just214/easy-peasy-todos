@@ -2,6 +2,8 @@
 
 A todo app built with [React Hooks](https://reactjs.org/docs/hooks-intro.html), [easy-peasy](https://github.com/ctrlplusb/easy-peasy), and [Firebase](https://firebase.google.com/).
 
+### [Demo](https://easy-peasy-app.firebaseapp.com/)
+
 Includes:
 
 - Email/Password authentication with Firebase [Authentication](https://firebase.google.com/docs/auth/web/start?authuser=0) (login, signup, and password reset).
