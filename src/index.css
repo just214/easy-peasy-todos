@@ -40,6 +40,7 @@ body {
 
 a {
   color: lightblue;
+  padding: 5px;
 }
 
 .auth-form {

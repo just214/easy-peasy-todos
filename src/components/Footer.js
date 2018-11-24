@@ -37,13 +37,12 @@ function Footer() {
         library.
       </small>
 
-      <a href="https://github.com">
-        <img
-          href="https://github.com"
-          src={githubLogo}
-          className="Github-logo"
-          alt="github-logo"
-        />
+      <a
+        href="https://github.com/gojutin/easy-peasy-todos"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={githubLogo} className="Github-logo" alt="github-logo" />
       </a>
     </StyledFooter>
   );
